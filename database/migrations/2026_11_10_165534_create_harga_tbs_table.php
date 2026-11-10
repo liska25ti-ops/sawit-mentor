@@ -10,18 +10,21 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('panens', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('harga_tbs', function (Blueprint $table) {
+        $table->id();
+        $table->date('periode_mulai');
+        $table->date('periode_selesai');
+        $table->decimal('harga_per_kg', 12, 2);
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('panens');
+        Schema::dropIfExists('harga_tbs');
     }
 };
